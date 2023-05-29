@@ -17,8 +17,8 @@ playerMenu createCharacter(string characterName) {
     pOptions.createChar.pMoney = 0;
     pOptions.createChar.pExpValCurrent = 0;
     pOptions.createChar.pExpValNextLevel = (pOptions.createChar.playerLevel * 1000);
-    pOptions.createChar.pWeaponDamage = 40;
-    pOptions.createChar.pArmorTOTAL = 40;
+    pOptions.createChar.pWeaponDamage = 0;
+    pOptions.createChar.pArmorTOTAL = 0;
 	return pOptions;
 };
 
@@ -39,10 +39,10 @@ playerMenu printCharacterSheet(playerMenu& pOptions) {
     cout << "|     ARMOR:      |           " << pOptions.createChar.pArmorTOTAL << endl;
     cout << "|     ATTACK:     |           " << pOptions.createChar.pWeaponDamage << endl;
     cout << "|     GOLD:       |           " << pOptions.createChar.pMoney << endl;
-    //cout << "|     WEAPON:     |           " << pOptions.createChar.weaponQ << " " << pOptions.createChar.weaponT << endl;
-   // cout << "|     HELMET:     |           " << pOptions.createChar.armorQHelm << " " << "Helmet" << endl;
-   // cout << "|     BODY ARMOR: |           " << pOptions.createChar.armorQBody << " " << "Body Amor" << endl;
-    //cout << "|     SHEILD:     |           " << pOptions.createChar.armorQSheild << " " << "Sheild" << endl;
+    cout << "|     WEAPON:     |           " << pOptions.createChar.weaponQ << " " << pOptions.createChar.weaponT << endl;
+    cout << "|     HELMET:     |           " << pOptions.createChar.armorQhelm << " " << "Helmet" << endl;
+    cout << "|     BODY ARMOR: |           " << pOptions.createChar.armorQbody << " " << "Body Amor" << endl;
+    cout << "|     SHEILD:     |           " << pOptions.createChar.armorQshield << " " << "Sheild" << endl;
     cout << "|==========================================================|" << endl;
     cout << "|           (1) INVENTORY   -   (2) MAIN MENU              |" << endl;
     cout << "|==========================================================|" << endl;

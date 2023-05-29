@@ -51,7 +51,7 @@ void mainMenu(playerMenu& pOptions){
 		startNewChar(pOptions);
 		break;
 	case 2:
-		mainMenu(pOptions);
+		loadChar(pOptions);
 		break;
 	case 7:
 		pExit();

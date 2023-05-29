@@ -38,7 +38,12 @@ typedef struct lvlUp {
 
 typedef struct player {
 
-	string playerName;
+	string playerName,
+		weaponQ = "Empty",
+		weaponT = "Hands",
+		armorQhelm = "No",
+		armorQbody = "No",
+		armorQshield = "No";
 
 	int pHealth = 0,
 		pHealthTOTAL,

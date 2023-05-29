@@ -21,6 +21,7 @@ playerMenu createCharacter(string characterName);
 void mainMenu(playerMenu& pOptions);
 void gameMenu(playerMenu& pOptions);
 void saveChar(playerMenu& pOptions);
+void loadChar(playerMenu& pOptions);
 void startNewChar(playerMenu& pOptions);
 playerMenu printCharacterSheet(playerMenu& pOptions);
 playerMenu playerInventory(playerMenu& pOptions);

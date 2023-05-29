@@ -66,9 +66,9 @@ void saveChar(playerMenu& pOptions) {
     system("pause");
     gameMenu(pOptions);
 }
-/*
-character loadChar(playerMenu& createChar) {
 
+void loadChar(playerMenu& pOptions) {
+    string characterName;
     cout << "Enter the name of the Character File: ";
     cin >> characterName;
     string path = characterName + ".txt";
@@ -77,23 +77,20 @@ character loadChar(playerMenu& createChar) {
 
     fin.open(path);
     if (fin.is_open()) {
-        fin >> createChar.name;
-        fin >> createChar.level;
-        fin >> createChar.expChar;
-        fin >> createChar.expCharTOTAL;
-        fin >> createChar.health;
-        fin >> createChar.HPTOTAL;
-        fin >> createChar.rage;
-        fin >> createChar.strength;
-        fin >> createChar.stamina;
-        fin >> createChar.charArmor.armorTotal;
-        fin >> createChar.weaponAttack;
-        fin >> createChar.souls;
-        fin >> createChar.saveLoad.saveWeaponQ;
-        fin >> createChar.saveLoad.saveWeaponT;
-        fin >> createChar.saveLoad.saveHelmQ;
-        fin >> createChar.saveLoad.saveArmorQ;
-        fin >> createChar.saveLoad.saveShieldQ;
+        fin >> pOptions.createChar.playerName;
+        fin >> pOptions.createChar.playerLevel;
+        fin >> pOptions.createChar.pExpValCurrent;
+        fin >> pOptions.createChar.pExpValNextLevel;
+        fin >> pOptions.createChar.pHealth;
+        fin >> pOptions.createChar.pHealthTOTAL;
+        fin >> pOptions.createChar.pRage;
+        fin >> pOptions.createChar.pStrength;
+        fin >> pOptions.createChar.pDexterity;
+        fin >> pOptions.createChar.pStamina;
+        fin >> pOptions.createChar.pArmorTOTAL;
+        fin >> pOptions.createChar.pWeaponDamage;
+        fin >> pOptions.createChar.pMoney;
+
 
         // fin >> static_cast<int>(weaponChoice);
         // fin >> helmQuality;
@@ -101,7 +98,7 @@ character loadChar(playerMenu& createChar) {
         // fin >> sheildQuality;
         fin.close();
     }
-
+    /*
     weaponQCheck(createChar);
     weaponTCheck(createChar);
     helmQCheck(createChar);
@@ -114,12 +111,13 @@ character loadChar(playerMenu& createChar) {
     createChar.weaponT = weaponType;
     createChar.weaponQ = weaponQualityType;
     createChar.swordWeaponQ = swordQualityType;
-    character player = characterCreation(characterName, swordQualityType, weaponQualityType, swordQuality, weaponType, helmQualityType, armorQualityType, sheildQualityType, helmQuality, weaponChoice);
-    printInfo(createChar);
+    */
+    playerMenu pInfo = createCharacter(characterName);
     system("pause");
-    pFirstScreen(createChar);
-    return createChar;
+    gameMenu(pInfo);
+
 }
+/*
 void weaponTCheck(playerMenu& createChar) {
     switch (createChar.saveLoad.saveWeaponT) {
     case 3:

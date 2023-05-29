@@ -8,4 +8,4 @@ typedef struct playerMenu {
 	lvlUp lvlBonus;
 	monsterStuff monsters;
 	saveLoad saveLoad;
-}playerMenu;
+} playerMenu;
