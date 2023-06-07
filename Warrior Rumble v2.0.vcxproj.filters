@@ -36,6 +36,12 @@
     <ClCompile Include="levelUpTask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="rumbleShop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="itemsList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includes.h">
@@ -48,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="monsters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="items.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -6,7 +6,8 @@ void saveChar(playerMenu& pOptions) {
     string saveTitle = pOptions.createChar.playerName + ".txt";
     ofstream saveCharFile;
     saveCharFile.open(saveTitle);
-    saveCharFile << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t" << pOptions.createChar.playerName << ", " << pOptions.createChar.playerLevel << ", " << pOptions.createChar.pExpValCurrent << ", "
+    
+    saveCharFile << "\t\t\t\t" << pOptions.createChar.playerName << ", " << pOptions.createChar.playerLevel << ", " << pOptions.createChar.pExpValCurrent << ", "
                                                    << pOptions.createChar.pExpValNextLevel << ", " << pOptions.createChar.pHealth << ", " << pOptions.createChar.pHealthTOTAL << ", "
                                                    << pOptions.createChar.pRage << ", " << pOptions.createChar.pRageTOTAL << ", " << pOptions.createChar.pStrength << ", "
                                                    << pOptions.createChar.pDexterity << ", " << pOptions.createChar.pStamina << ", " << pOptions.createChar.pArmorTOTAL << ", "
@@ -15,7 +16,7 @@ void saveChar(playerMenu& pOptions) {
     saveCharFile.close();
 
     saveCharFile.seekp(0, std::ios::end); //to ensure the put pointer is at the end
-    saveCharFile << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t" << pOptions.createChar.playerName << ", " << pOptions.createChar.playerLevel << ", " << pOptions.createChar.pExpValCurrent << ", " 
+    saveCharFile << "\t\t\t\t" << pOptions.createChar.playerName << ", " << pOptions.createChar.playerLevel << ", " << pOptions.createChar.pExpValCurrent << ", " 
                                                    << pOptions.createChar.pExpValNextLevel << ", " << pOptions.createChar.pHealth << ", " << pOptions.createChar.pHealthTOTAL << ", "
                                                    << pOptions.createChar.pRage << ", " << pOptions.createChar.pRageTOTAL << ", " << pOptions.createChar.pStrength << ", " 
                                                    << pOptions.createChar.pDexterity << ", " << pOptions.createChar.pStamina << ", " << pOptions.createChar.pArmorTOTAL << ", " 
@@ -23,7 +24,7 @@ void saveChar(playerMenu& pOptions) {
                                                  //<< ", " << weaponQuality << ", " << weaponChoice << ", " << helmQuality << ", " << armorQuality << ", " << sheildQuality
 
     std::ofstream SaveCharFile(saveTitle);
-
+    
     // Always check to see if the file is open and for errors.
     if (SaveCharFile.is_open())
     {
@@ -67,16 +68,20 @@ void saveChar(playerMenu& pOptions) {
     gameMenu(pOptions);
 }
 
-void loadChar(playerMenu& pOptions) {
-    string characterName;
+playerMenu loadChar(playerMenu& pOptions) {
+
     cout << "Enter the name of the Character File: ";
-    cin >> characterName;
-    string path = characterName + ".txt";
+    cin >> pOptions.createChar.playerName;
+    string path = pOptions.saveLoad.name + ".txt";
 
     std::ifstream fin;
 
     fin.open(path);
+
     if (fin.is_open()) {
+        system("pause");
+        cout << "FILE LOADED" << endl;
+        //createCharacter(pInfo);
         fin >> pOptions.createChar.playerName;
         fin >> pOptions.createChar.playerLevel;
         fin >> pOptions.createChar.pExpValCurrent;
@@ -84,6 +89,7 @@ void loadChar(playerMenu& pOptions) {
         fin >> pOptions.createChar.pHealth;
         fin >> pOptions.createChar.pHealthTOTAL;
         fin >> pOptions.createChar.pRage;
+        fin >> pOptions.createChar.pRageTOTAL;
         fin >> pOptions.createChar.pStrength;
         fin >> pOptions.createChar.pDexterity;
         fin >> pOptions.createChar.pStamina;
@@ -91,12 +97,16 @@ void loadChar(playerMenu& pOptions) {
         fin >> pOptions.createChar.pWeaponDamage;
         fin >> pOptions.createChar.pMoney;
 
-
         // fin >> static_cast<int>(weaponChoice);
         // fin >> helmQuality;
         // fin >> armorQuality;
         // fin >> sheildQuality;
         fin.close();
+    }
+    else {
+        cout << "File Load Failed!" << endl;
+        system("pause");
+        mainMenu(pOptions);
     }
     /*
     weaponQCheck(createChar);
@@ -112,11 +122,10 @@ void loadChar(playerMenu& pOptions) {
     createChar.weaponQ = weaponQualityType;
     createChar.swordWeaponQ = swordQualityType;
     */
-    playerMenu pInfo = createCharacter(characterName);
-    system("pause");
-    gameMenu(pInfo);
-
+    printCharacterSheet(pOptions);
+    return pOptions;
 }
+
 /*
 void weaponTCheck(playerMenu& createChar) {
     switch (createChar.saveLoad.saveWeaponT) {

@@ -16,12 +16,14 @@
 #include <limits>
 #include "playerInfo.h"
 #include "main.h"
+#include "items.h"
 
-playerMenu createCharacter(string characterName);
+playerMenu createCharacter(string playerName);
+playerMenu inventoryData(playerMenu& pOptions);
 void mainMenu(playerMenu& pOptions);
 void gameMenu(playerMenu& pOptions);
 void saveChar(playerMenu& pOptions);
-void loadChar(playerMenu& pOptions);
+playerMenu loadChar(playerMenu& pOptions);
 void startNewChar(playerMenu& pOptions);
 playerMenu printCharacterSheet(playerMenu& pOptions);
 playerMenu playerInventory(playerMenu& pOptions);
@@ -41,4 +43,10 @@ void warriorHard(playerMenu& pOptions);
 void warriorExpert(playerMenu& pOptions);
 void warriorMaster(playerMenu& pOptions);
 void warriorLegendary(playerMenu& pOptions);
+
+//Rumble Shop
+void shopMenu(playerMenu& pOptions);
+void shopMenuWeapons(playerMenu& pOptions);
+void shopMenuSwords(playerMenu& pOptions);
+void weaponList(playerMenu& pOptions);
 #endif //WARRIOR_RUMBLE_INCLUDES_H

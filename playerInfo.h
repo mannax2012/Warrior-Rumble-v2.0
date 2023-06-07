@@ -10,7 +10,6 @@ enum class ItemType {
 	Helmet,
 	Random
 };
-
 typedef struct combat {
 	string jabAttack = "Quick Jab",
 		slashAttack = "Heavy Slash";
@@ -39,11 +38,10 @@ typedef struct lvlUp {
 typedef struct player {
 
 	string playerName,
-		weaponQ = "Empty",
 		weaponT = "Hands",
-		armorQhelm = "No",
-		armorQbody = "No",
-		armorQshield = "No";
+		armorQhelm = "None",
+		armorQbody = "None",
+		armorQshield = "None";
 
 	int pHealth = 0,
 		pHealthTOTAL,
@@ -80,6 +78,7 @@ typedef struct inventory {
 } inventory;
 
 typedef struct saveLoad {
+	string name;
 	int saveWeaponQ,
 		saveWeaponT,
 		saveHelmQ,

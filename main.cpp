@@ -13,6 +13,7 @@ int main(playerMenu& pOptions) {
 	system("pause");
 	*/
 	mainMenu(pOptions);
+	//weaponList(pOptions);
 }
 
 int pExit() {
@@ -94,7 +95,7 @@ void gameMenu(playerMenu& pOptions) {
 		challengeMenu(pOptions);
 		break;
 	case 3:
-		gameMenu(pOptions);
+		shopMenu(pOptions);
 		break;
 	case 6:
 		saveChar(pOptions);

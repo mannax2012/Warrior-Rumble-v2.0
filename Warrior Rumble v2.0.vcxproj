@@ -129,14 +129,17 @@
   <ItemGroup>
     <ClCompile Include="challenges.cpp" />
     <ClCompile Include="combat.cpp" />
+    <ClCompile Include="itemsList.cpp" />
     <ClCompile Include="levelUpTask.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="monsters.cpp" />
     <ClCompile Include="playerInfo.cpp" />
+    <ClCompile Include="rumbleShop.cpp" />
     <ClCompile Include="saveLoad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includes.h" />
+    <ClInclude Include="items.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="monsters.h" />
     <ClInclude Include="playerInfo.h" />
