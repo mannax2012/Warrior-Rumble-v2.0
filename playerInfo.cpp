@@ -1,4 +1,5 @@
 #include "includes.h"
+#include "items.h"
 using namespace std;
 string playerName;
 
@@ -23,6 +24,7 @@ playerMenu createCharacter(string playerName) {
 };
 
 playerMenu printCharacterSheet(playerMenu& pOptions) {
+  
     int menuOptionChoice;
     system("cls");
     cout << "|==========================================================|" << endl;
@@ -57,6 +59,7 @@ playerMenu printCharacterSheet(playerMenu& pOptions) {
     }
     switch (menuOptionChoice) {
     case 1:
+       // unEquipIt(pOptions);
         playerInventory(pOptions);
         break;
     case 2:

@@ -16,7 +16,6 @@
 #include <limits>
 #include "playerInfo.h"
 #include "main.h"
-#include "items.h"
 
 playerMenu createCharacter(string playerName);
 playerMenu inventoryData(playerMenu& pOptions);
@@ -48,5 +47,5 @@ void warriorLegendary(playerMenu& pOptions);
 void shopMenu(playerMenu& pOptions);
 void shopMenuWeapons(playerMenu& pOptions);
 void shopMenuSwords(playerMenu& pOptions);
-void weaponList(playerMenu& pOptions);
+//void weaponList(playerMenu& pOptions);
 #endif //WARRIOR_RUMBLE_INCLUDES_H

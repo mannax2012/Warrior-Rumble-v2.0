@@ -19,3 +19,20 @@ typedef struct monsterStuff {
         expReward,
         soulsReward;
 }monsterStuff;
+
+class Monsters {
+public:
+    string creatureName;
+    int creatureHealth,
+        creatureLevel,
+        creatureStrength,
+        creatureStamina,
+        creatureDexterity,
+        creatureArmorTOTAL,
+        creatureWeaponAttack;
+
+
+    Monsters(const string& cName, int cHealth, int cLvL, int cStr, int cStam, int cDex, int cArmor, int cAP) : 
+        creatureName(cName), creatureHealth(cHealth), creatureLevel(cLvL), creatureStrength(cStr), creatureStamina(cStam), 
+        creatureDexterity(cDex), creatureArmorTOTAL(cArmor), creatureWeaponAttack(cAP) {}
+};

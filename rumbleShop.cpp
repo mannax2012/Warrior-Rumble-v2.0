@@ -1,9 +1,16 @@
 #include "includes.h"
-
+#include "items.h"
 using namespace std;
-
 short pArrayShop[7] = { 1,2,3,4,5,6,7 };
 short pArrayShopBuy[7] = { 1,2,3,4,5,6,7 };
+
+Weapon sword01("Oak Sword", 10, 10, false);
+Weapon sword02("Copper Sword", 20, 15, false);
+Weapon sword03("Bronze Sword", 30, 20, false);
+Weapon sword04("Iron Sword", 50, 30, false);
+Weapon sword05("Steel Sword", 100, 50, false);
+Weapon sword06("Mithril Sword", 125, 80, false);
+Weapon sword07("Pecker Smasher", 500, 1000, false);
 
 void shopMenu(playerMenu& pOptions) {
 	system("cls");
@@ -108,7 +115,7 @@ void shopMenuWeapons(playerMenu& pOptions) {
 };
 
 void shopMenuSwords(playerMenu& pOptions) {
-	
+
 	system("cls");
 	int shopMenuChoice;
 	cout << "|==========================================================|" << endl;
@@ -145,19 +152,34 @@ void shopMenuSwords(playerMenu& pOptions) {
 				shopMenu(pOptions);
 			}
 			else {
-				if (sword1.isOwnd != false) {
-					cout << "You already own a weapon of this quality." << sword1.isOwnd << endl;
+				if (sword01.isOwnd != false) {
+					cout << "You already own a weapon of this quality." << endl;
 					system("pause");
 					shopMenu(pOptions);
 				}
 				else {
-					sword1.isOwnd = true;
-					pOptions.createChar.weaponT = sword1.name;
-					pOptions.createChar.pMoney = pOptions.createChar.pMoney - sword1.cost;
-					pOptions.createChar.pWeaponDamage += sword1.damage;
-					cout << pOptions.createChar.weaponT << " has been added to your inventory. You spent " << sword1.cost << " on this item." << sword1.isOwnd << endl;
-					cout << sword1.isOwnd;
-					system("pause"); 
+					sword01.buyIt(pOptions);
+					sword01.equipIt(pOptions);
+					shopMenu(pOptions);
+				}
+			}
+			break;
+		case 2:
+			if (pOptions.createChar.pMoney == 0) {
+				cout << "You do not have enough for this purchace." << endl;
+				system("pause");
+				shopMenu(pOptions);
+			}
+			else {
+				if (sword02.isOwnd != false) {
+					cout << "You already own a weapon of this quality." << endl;
+					system("pause");
+					shopMenu(pOptions);
+				}
+				else {
+
+					sword02.buyIt(pOptions);
+					sword02.equipIt(pOptions);
 					shopMenu(pOptions);
 				}
 			}

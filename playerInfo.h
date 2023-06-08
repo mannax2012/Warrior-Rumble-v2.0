@@ -36,9 +36,13 @@ typedef struct lvlUp {
 } lvlUp;
 
 typedef struct player {
+	bool isEquipedWeapon = false,
+		isEquipedHelm = false,
+		isEquipedBodyArmor = false,
+		isEquipedShield = false;
 
 	string playerName,
-		weaponT = "Hands",
+		weaponT = "Deez Hands",
 		armorQhelm = "None",
 		armorQbody = "None",
 		armorQshield = "None";
@@ -57,7 +61,14 @@ typedef struct player {
 		pExpValCurrent,
 		pExpValNextLevel;
 } player;
-
+class pInventory {
+public:
+	bool item01;
+	string itemName01 = "EMPTY";
+	int itemDamageVal01 = 0,
+		itemArmorVal01 = 0,
+		itemSellVal01 = 0;
+};
 typedef struct inventory {
 	bool item01;
 	string itemName01 = "EMPTY",
