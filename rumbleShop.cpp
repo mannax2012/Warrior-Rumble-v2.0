@@ -1,6 +1,7 @@
 #include "includes.h"
 #include "items.h"
 using namespace std;
+
 short pArrayShop[7] = { 1,2,3,4,5,6,7 };
 short pArrayShopBuy[7] = { 1,2,3,4,5,6,7 };
 
@@ -115,7 +116,6 @@ void shopMenuWeapons(playerMenu& pOptions) {
 };
 
 void shopMenuSwords(playerMenu& pOptions) {
-
 	system("cls");
 	int shopMenuChoice;
 	cout << "|==========================================================|" << endl;
@@ -177,9 +177,8 @@ void shopMenuSwords(playerMenu& pOptions) {
 					shopMenu(pOptions);
 				}
 				else {
-
+					pOptions.inventory.addItem("Copper Sword", 20);
 					sword02.buyIt(pOptions);
-					sword02.equipIt(pOptions);
 					shopMenu(pOptions);
 				}
 			}

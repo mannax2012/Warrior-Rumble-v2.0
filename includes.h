@@ -14,8 +14,10 @@
 #include <strsafe.h>
 #include <map>
 #include <limits>
+#include <vector>
 #include "playerInfo.h"
 #include "main.h"
+#include "items.h"
 
 playerMenu createCharacter(string playerName);
 playerMenu inventoryData(playerMenu& pOptions);

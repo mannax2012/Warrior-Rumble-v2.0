@@ -69,24 +69,6 @@ public:
 		itemArmorVal01 = 0,
 		itemSellVal01 = 0;
 };
-typedef struct inventory {
-	bool item01;
-	string itemName01 = "EMPTY",
-		itemName02 = "EMPTY",
-		itemName03 = "EMPTY",
-		itemName04 = "EMPTY",
-		itemName05 = "EMPTY",
-		itemName06 = "EMPTY",
-		itemName07 = "EMPTY",
-		itemName08 = "EMPTY",
-		itemName09 = "EMPTY",
-		itemName10 = "EMPTY";
-
-	int itemDamageVal01 = 0,
-		itemArmorVal01 = 0,
-	itemSellVal01 = 0;
-
-} inventory;
 
 typedef struct saveLoad {
 	string name;

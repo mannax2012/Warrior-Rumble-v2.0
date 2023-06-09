@@ -24,7 +24,7 @@ playerMenu createCharacter(string playerName) {
 };
 
 playerMenu printCharacterSheet(playerMenu& pOptions) {
-  
+    Inventory inventory;
     int menuOptionChoice;
     system("cls");
     cout << "|==========================================================|" << endl;
@@ -59,8 +59,8 @@ playerMenu printCharacterSheet(playerMenu& pOptions) {
     }
     switch (menuOptionChoice) {
     case 1:
-       // unEquipIt(pOptions);
-        playerInventory(pOptions);
+        inventory.displayInventory();
+        printCharacterSheet(pOptions);
         break;
     case 2:
         gameMenu(pOptions);
@@ -86,99 +86,3 @@ void startNewChar(playerMenu& pOptions) {
     playerMenu pInfo = createCharacter(playerName);
 	printCharacterSheet(pInfo);
 }
-
-playerMenu playerInventory(playerMenu& pOptions){
-    inventoryData(pOptions);
-    system("cls");
-    cout << "|==========================================================|" << endl;
-    cout << "|                   CHARACTER INVENTORY                    |" << endl;
-    cout << "|==========================================================|" << endl;
-    cout << "|SLOT  # | ITEM NAME | ARMORS | ATTACK RATING | SELL VALUE |" << endl;
-    cout << "|==========================================================|" << endl;
-    cout << "|SLOT 1: |" << pOptions.itemOptions.itemName01 << " | " << pOptions.itemOptions.itemArmorVal01 << " | " << pOptions.itemOptions.itemDamageVal01 << " | " << pOptions.itemOptions.itemSellVal01 << endl;
-    cout << "|SLOT 2: |" << pOptions.itemOptions.itemName02 << " | " << pOptions.itemOptions.itemArmorVal01 << " | " << pOptions.itemOptions.itemDamageVal01 << " | " << pOptions.itemOptions.itemSellVal01 << endl;
-    cout << "|SLOT 3: |" << pOptions.itemOptions.itemName03 << " | " << pOptions.itemOptions.itemArmorVal01 << " | " << pOptions.itemOptions.itemDamageVal01 << " | " << pOptions.itemOptions.itemSellVal01 << endl;
-    cout << "|SLOT 4: |" << pOptions.itemOptions.itemName04 << " | " << pOptions.itemOptions.itemArmorVal01 << " | " << pOptions.itemOptions.itemDamageVal01 << " | " << pOptions.itemOptions.itemSellVal01 << endl;
-    cout << "|SLOT 5: |" << pOptions.itemOptions.itemName05 << " | " << pOptions.itemOptions.itemArmorVal01 << " | " << pOptions.itemOptions.itemDamageVal01 << " | " << pOptions.itemOptions.itemSellVal01 << endl;
-    cout << "|SLOT 6: |" << pOptions.itemOptions.itemName06 << " | " << pOptions.itemOptions.itemArmorVal01 << " | " << pOptions.itemOptions.itemDamageVal01 << " | " << pOptions.itemOptions.itemSellVal01 << endl;
-    cout << "|SLOT 7: |" << pOptions.itemOptions.itemName07 << " | " << pOptions.itemOptions.itemArmorVal01 << " | " << pOptions.itemOptions.itemDamageVal01 << " | " << pOptions.itemOptions.itemSellVal01 << endl;
-    cout << "|SLOT 8: |" << pOptions.itemOptions.itemName08 << " | " << pOptions.itemOptions.itemArmorVal01 << " | " << pOptions.itemOptions.itemDamageVal01 << " | " << pOptions.itemOptions.itemSellVal01 << endl;
-    cout << "|SLOT 9: |" << pOptions.itemOptions.itemName09 << " | " << pOptions.itemOptions.itemArmorVal01 << " | " << pOptions.itemOptions.itemDamageVal01 << " | " << pOptions.itemOptions.itemSellVal01 << endl;
-    cout << "|SLOT 10:|" << pOptions.itemOptions.itemName10 << " | " << pOptions.itemOptions.itemArmorVal01 << " | " << pOptions.itemOptions.itemDamageVal01 << " | " << pOptions.itemOptions.itemSellVal01 << endl;
-    cout << "|==========================================================|" << endl;
-    system("pause");
-    printCharacterSheet(pOptions);
-    return pOptions;
-}
-
-playerMenu inventoryData(playerMenu& pOptions) {
-    
-    std::array<bool, 10> inventory = { false, false, false, false, false, false, false, false, false, false };
-    //inventory[0] = true;
-    for (int i = 0; i < 10; i++) {
-        if (inventory[i]) {
-            std::cout << "slot " << i << " is occupied" << std::endl;
-        }
-    }
-    if (inventory[0] == false) {
-        pOptions.itemOptions.itemName01 = "Empty";
-    }
-    else {
-        pOptions.itemOptions.itemName01 = "Occupied";
-    }
-    if (inventory[1] == false) {
-        pOptions.itemOptions.itemName02 = "Empty";
-    }
-    else if (inventory[1] == true && inventory[0] == true){
-        pOptions.itemOptions.itemName02 = "Occupied";
-    }
-    if (inventory[2] == false && inventory[1] == true && inventory[0] == true) {
-        pOptions.itemOptions.itemName03 = "Empty";
-    }
-    else {
-        pOptions.itemOptions.itemName03 = "Occupied";
-    }
-    if (inventory[3] == false && inventory[2] == true && inventory[1] == true && inventory[0] == true) {
-        pOptions.itemOptions.itemName04 = "Empty";
-    }
-    else {
-        pOptions.itemOptions.itemName04 = "Occupied";
-    }
-    if (inventory[4] == false && inventory[3] == true && inventory[2] == true && inventory[1] == true && inventory[0] == true) {
-        pOptions.itemOptions.itemName05 = "Empty";
-    }
-    else {
-        pOptions.itemOptions.itemName05 = "Occupied.";
-    }
-    if (inventory[5] == false && inventory[4] == true && inventory[3] == true && inventory[2] == true && inventory[1] == true && inventory[0] == true) {
-        pOptions.itemOptions.itemName06 = "Empty";
-    }
-    else {
-        pOptions.itemOptions.itemName06 = "Occupied";
-    }
-    if (inventory[6] == false && inventory[5] == true && inventory[4] == true && inventory[3] == true && inventory[2] == true && inventory[1] == true && inventory[0] == true) {
-        pOptions.itemOptions.itemName07 = "Empty";
-    }
-    else {
-        pOptions.itemOptions.itemName07 = "Occupied";
-    }
-    if (inventory[7] == false && inventory[6] == true && inventory[5] == true && inventory[4] == true && inventory[3] == true && inventory[2] == true && inventory[1] == true && inventory[0] == true) {
-        pOptions.itemOptions.itemName08 = "Empty";
-    }
-    else {
-        pOptions.itemOptions.itemName08 = "Occupied";
-    }   
-    if (inventory[8] == false && inventory[7] == true && inventory[6] == true && inventory[5] == true && inventory[4] == true && inventory[3] == true && inventory[2] == true && inventory[1] == true && inventory[0] == true) {
-        pOptions.itemOptions.itemName09 = "Empty";
-    }
-    else {
-        pOptions.itemOptions.itemName09 = "Occupied";
-    }
-    if (inventory[9] == false && inventory[8] == true && inventory[7] == true && inventory[6] == true && inventory[5] == true && inventory[4] == true && inventory[3] == true && inventory[2] == true && inventory[1] == true && inventory[0] == true) {
-        pOptions.itemOptions.itemName10 = "Empty";
-    }
-    else {
-        pOptions.itemOptions.itemName10 = "Occupied";
-    }
-    return pOptions;
-} 
